@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StayPositive/RegisterViewWorkPlease.swift"
+            timestampString = "526515369.895215"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "buttonRegister(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StayPositive/SignUp/GenderTextField.swift"
+            timestampString = "537033808.510366"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StayPositive.GenderTextField.__deallocating_deinit"
+                  moduleName = "StayPositive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/EvynVincent/StayPositive/StayPositive/SignUp/GenderTextField.swift"
+                  timestampString = "537383240.916146"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StayPositive.GenderTextField.__allocating_init(frame: __C.CGRect) -&gt; StayPositive.GenderTextField"
+                  moduleName = "StayPositive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/EvynVincent/StayPositive/StayPositive/SignUp/GenderTextField.swift"
+                  timestampString = "537383240.920397"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StayPositive.GenderTextField.init(frame: __C.CGRect) -&gt; StayPositive.GenderTextField"
+                  moduleName = "StayPositive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/EvynVincent/StayPositive/StayPositive/SignUp/GenderTextField.swift"
+                  timestampString = "537383240.9252501"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "47">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StayPositive.GenderTextField.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;StayPositive.GenderTextField&gt;"
+                  moduleName = "StayPositive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/EvynVincent/StayPositive/StayPositive/SignUp/GenderTextField.swift"
+                  timestampString = "537383240.927888"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StayPositive.GenderTextField.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;StayPositive.GenderTextField&gt;"
+                  moduleName = "StayPositive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/EvynVincent/StayPositive/StayPositive/SignUp/GenderTextField.swift"
+                  timestampString = "537383240.929979"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

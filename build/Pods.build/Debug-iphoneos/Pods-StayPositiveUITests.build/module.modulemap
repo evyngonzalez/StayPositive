@@ -1,0 +1,6 @@
+framework module Pods_StayPositiveUITests {
+  umbrella header "Pods-StayPositiveUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

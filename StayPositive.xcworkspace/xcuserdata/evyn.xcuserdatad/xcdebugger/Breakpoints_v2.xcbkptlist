@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StayPositive/Feed/NewsTableViewCell.swift"
+            timestampString = "567742253.624488"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "descriptionLabel"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StayPositive.NewsTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; StayPositive.NewsTableViewCell"
+                  moduleName = "StayPositive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evyn/Desktop/StayPositive/StayPositive/Feed/NewsTableViewCell.swift"
+                  timestampString = "567740417.121038"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "186">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StayPositive.NewsTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;StayPositive.NewsTableViewCell&gt;"
+                  moduleName = "StayPositive"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/evyn/Desktop/StayPositive/StayPositive/Feed/NewsTableViewCell.swift"
+                  timestampString = "567740417.125144"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "157">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
