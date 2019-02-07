@@ -12,33 +12,32 @@ class NewsFeedTable: UITableViewController {
 
     private var rssItems: [RSSItem]?
     private var cellStates: [CellState]?
-    //private var urls
-    //private var urls.length
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.estimatedRowHeight = 155.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        //for i => n:
-        //fetchData(i)
-        fetchData()
+        let urls:[String] = ["https://www.psychologytoday.com/us/blog/both-sides-the-couch/feed", "https://beyondmeds.com/feed/"]
+        fetchData(urls: urls)
     }
     
-    private func fetchData()
+    private func fetchData(urls: [String])
     {
         let feedParser = FeedParser()
-         feedParser.parseFeed(url: "https://www.psychologytoday.com/us/blog/both-sides-the-couch/feed" ) { (rssItems) in
-            self.rssItems = rssItems
-            self.cellStates = Array(repeating: .collapsed, count: rssItems.count)
-            
-            OperationQueue.main.addOperation {
-                self.tableView.reloadSections(IndexSet(integer: 0), with: .left)
+        for urlIn in urls{
+            feedParser.parseFeed(url: urlIn) { (rssItems) in
+                self.rssItems = rssItems
+                self.cellStates = Array(repeating: .collapsed, count: rssItems.count)
+                
+                OperationQueue.main.addOperation {
+                    self.tableView.reloadSections(IndexSet(integer: 0), with: .left)
+                }
             }
         }
+
     }
-    
-    
     
     // MARK: - Table view data source
     

@@ -33,7 +33,7 @@ class RegisterVC: UIViewController {
                     { (user, error) in
                         if error == nil{
                             //Make entry in database
-                            self.databaseRef.child("users").child(user!.uid).child("email").setValue(self.email.text!)
+                            self.databaseRef.child("users").child(user!.user.uid).child("email").setValue(self.email.text!)
                             //Perform segue to success
                             self.performSegue(withIdentifier: "signUp", sender: nil)
                         }
