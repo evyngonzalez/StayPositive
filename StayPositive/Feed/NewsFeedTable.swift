@@ -19,7 +19,7 @@ class NewsFeedTable: UITableViewController {
         tableView.estimatedRowHeight = 155.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        let urls:[String] = ["https://www.psychologytoday.com/us/blog/both-sides-the-couch/feed", "https://beyondmeds.com/feed/"]
+        let urls:[String] = ["https://www.nimh.nih.gov/site-info/index-rss.atom?format=xml","https://blogs.psychcentral.com/feed","https://www.psychologytoday.com/blog/both-sides-the-couch/feed"]
         fetchData(urls: urls)
     }
     
