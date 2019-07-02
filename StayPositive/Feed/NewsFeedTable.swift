@@ -8,19 +8,32 @@
 
 import UIKit
 
-class NewsFeedTable: UITableViewController {
+class NewsFeedTable: UITableViewController, UIWebViewDelegate {
 
-    private var rssItems: [RSSItem]?
-    private var cellStates: [CellState]?
+     private var rssItems: [RSSItem]?
+     private var cellStates: [CellState]?
     
+    @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.estimatedRowHeight = 155.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+    
+    
+    
+
+        
         let urls:[String] = ["https://www.nimh.nih.gov/site-info/index-rss.atom?format=xml", "https://blogs.psychcentral.com/feed","https://www.psychologytoday.com/blog/both-sides-the-couch/feed"]
-        fetchData(urls: urls)
+       fetchData(urls: urls)
+        
+    
+        
+        
+        
+        
+        
     }
     
     private func fetchData(urls: [String])
@@ -37,6 +50,11 @@ class NewsFeedTable: UITableViewController {
             }
         }
 
+    }
+    
+    
+    func imgFetch(){
+    
     }
     
     // MARK: - Table view data source
@@ -82,7 +100,37 @@ class NewsFeedTable: UITableViewController {
         cellStates?[indexPath.row] = (cell.descriptionLabel.numberOfLines == 0) ? .expanded : .collapsed
         
         tableView.endUpdates()
+        
+       
+        
     }
+    
+   
+}
+
+/*
+ func tableView(_tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+    let item = rssItems?[indexPath.row] as! RSSItem
+        let webBrowser = NewsFeedTable()
+        
+    item.entryUrl = RSSItem?[indexPath.item].url
+    UINavigationController?.pushViewController(webBrowser, animated: true)
+    
+    tableView.deselectRow(at: indexPath as IndexPath, animated: true)
+
+        self.navigationController?.pushViewController(webBrowser, animated: true)
+        
+    }
+}
+    /*
+    func tableView(_tableView: UITableViewCell, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+    let controller = NewsTableViewCell(tableView: UITableViewCell())
+    controller.entryUrl = RSSItem?[indexPath.item].url
+    UINavigationController?.pushViewController(controller, animated: true)
+    }
+
     
 }
 
@@ -96,4 +144,4 @@ class NewsFeedTable: UITableViewController {
 
 
 
-
+ */*/

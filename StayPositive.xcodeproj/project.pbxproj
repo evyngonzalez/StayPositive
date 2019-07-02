@@ -13,6 +13,7 @@
 		4060F26421D0D104009C431D /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4060F26321D0D104009C431D /* ArticleCell.swift */; };
 		4060F26621D0D2B3009C431D /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4060F26521D0D2B3009C431D /* Article.swift */; };
 		4060F26821D0D4A0009C431D /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4060F26721D0D4A0009C431D /* NewsViewController.swift */; };
+		40CA8D0522283DA90098D1FD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40CA8D0422283DA90098D1FD /* WebViewController.swift */; };
 		92940EC71F4CC6BD00F85214 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92940EC61F4CC6BD00F85214 /* LoginVC.swift */; };
 		92940ECB1F4CF6AB00F85214 /* MoreInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92940ECA1F4CF6AB00F85214 /* MoreInfoVC.swift */; };
 		929985011F49F96300DF4167 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929985001F49F96300DF4167 /* AppDelegate.swift */; };
@@ -23,7 +24,6 @@
 		929985351F49FE5B00DF4167 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 929985341F49FE5B00DF4167 /* Launch Screen.storyboard */; };
 		929985501F4A08B500DF4167 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299854C1F4A08B500DF4167 /* FeedViewController.swift */; };
 		929985511F4A08B500DF4167 /* FeedBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299854D1F4A08B500DF4167 /* FeedBtn.swift */; };
-		929985521F4A08B500DF4167 /* textFieldFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299854E1F4A08B500DF4167 /* textFieldFeed.swift */; };
 		929985531F4A08B500DF4167 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9299854F1F4A08B500DF4167 /* ChatViewController.swift */; };
 		929985561F4A08FD00DF4167 /* SymptomsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929985551F4A08FD00DF4167 /* SymptomsVC.swift */; };
 		929985591F4A091000DF4167 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929985571F4A091000DF4167 /* RegisterVC.swift */; };
@@ -79,6 +79,7 @@
 		4060F26321D0D104009C431D /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		4060F26521D0D2B3009C431D /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		4060F26721D0D4A0009C431D /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		40CA8D0422283DA90098D1FD /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		77F9BD566F6117C4EFE77ADA /* Pods-StayPositive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayPositive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StayPositive/Pods-StayPositive.debug.xcconfig"; sourceTree = "<group>"; };
 		90200430ED3366B2DBF13AA2 /* Pods-StayPositive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayPositive.release.xcconfig"; path = "Pods/Target Support Files/Pods-StayPositive/Pods-StayPositive.release.xcconfig"; sourceTree = "<group>"; };
 		908BAC423298B55593716178 /* Pods_StayPositive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayPositive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +99,6 @@
 		929985341F49FE5B00DF4167 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		9299854C1F4A08B500DF4167 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		9299854D1F4A08B500DF4167 /* FeedBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedBtn.swift; sourceTree = "<group>"; };
-		9299854E1F4A08B500DF4167 /* textFieldFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = textFieldFeed.swift; sourceTree = "<group>"; };
 		9299854F1F4A08B500DF4167 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		929985551F4A08FD00DF4167 /* SymptomsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SymptomsVC.swift; sourceTree = "<group>"; };
 		929985571F4A091000DF4167 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -274,8 +274,8 @@
 				BBCB185D21228C42006B2005 /* ThirdtoMultiViewController.swift */,
 				9299854C1F4A08B500DF4167 /* FeedViewController.swift */,
 				9299854D1F4A08B500DF4167 /* FeedBtn.swift */,
-				9299854E1F4A08B500DF4167 /* textFieldFeed.swift */,
 				9299854F1F4A08B500DF4167 /* ChatViewController.swift */,
+				40CA8D0422283DA90098D1FD /* WebViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -525,7 +525,6 @@
 			files = (
 				4060F26621D0D2B3009C431D /* Article.swift in Sources */,
 				929985561F4A08FD00DF4167 /* SymptomsVC.swift in Sources */,
-				929985521F4A08B500DF4167 /* textFieldFeed.swift in Sources */,
 				929985661F4A0E0A00DF4167 /* circleView.swift in Sources */,
 				403D337521D5EFA1005A2CAC /* NewsTableViewCell.swift in Sources */,
 				929985601F4A0C8600DF4167 /* gifRun.swift in Sources */,
@@ -539,6 +538,7 @@
 				403D337321D5EEE4005A2CAC /* NewsFeedTable.swift in Sources */,
 				BBCB185C21228C28006B2005 /* SessionsViewController.swift in Sources */,
 				92940ECB1F4CF6AB00F85214 /* MoreInfoVC.swift in Sources */,
+				40CA8D0522283DA90098D1FD /* WebViewController.swift in Sources */,
 				BBCB185E21228C42006B2005 /* ThirdtoMultiViewController.swift in Sources */,
 				BBCB185A21228BF6006B2005 /* SummaryViewController.swift in Sources */,
 				929985501F4A08B500DF4167 /* FeedViewController.swift in Sources */,
