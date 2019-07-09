@@ -9,8 +9,9 @@
 import Firebase
 import UIKit
 import AVFoundation
+import FirebaseAuth
 
-class newEmailPass: UIViewController {
+class newEmailPass: UIViewController, UITextFieldDelegate {
     var Player: AVPlayer!
     var PlayerLayer: AVPlayerLayer!
     
@@ -26,39 +27,57 @@ class newEmailPass: UIViewController {
     
     
     var databaseRef = Database.database().reference()
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        email.resignFirstResponder()
+        password.resignFirstResponder()
+        confirmPass.resignFirstResponder()
+        return true
+    }
     
     @IBAction func signUpTapped(_ sender: Any) {
         
-        
-        //Create user
-        Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
-            if error != nil{
-                //Print a message for success
-                self.errorMessage.textColor = UIColor.red
-                self.errorMessage.text = error?.localizedDescription
-            } else {
-                self.errorMessage.textColor = UIColor.green
-                self.errorMessage.text = "Registered Successfully"
-                //Sign In the user
-                Auth.auth().signIn(withEmail: self.email.text!, password: self.password.text!, completion:
-                    { (user, error) in
-                        if error == nil{
-                            //Make entry in database
-                            self.databaseRef.child("users").child(user!.user.uid).child("email").setValue(self.email.text!)
-                            //Perform segue to success
-                            self.performSegue(withIdentifier: "signUp", sender: nil)
-                        }
-                })
+        if password.text != confirmPass.text {
+            let alertController = UIAlertController(title: "Password Incorrect", message: "Please re-type password", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            
+            alertController.addAction(defaultAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else{
+            Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
+                if error == nil {
+                    
+                    self.databaseRef.child("users").child(user!.user.uid).child("email").setValue(self.email.text!)
+                    let user = user?.user
+                    print("User has Signed In")
+                    
+                    if user!.isEmailVerified {
+                        self.performSegue(withIdentifier: "signUp", sender: self)
+                    }
+                }
+                else {
+                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    
+                    alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
             }
-        
+        }
     }
-    }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.hideKeyboardWhenTappedAround()
+        email.delegate = self
+        password.delegate = self
+        confirmPass.delegate = self
+        
+        
         let URL = Bundle.main.url(forResource: "backgvid" , withExtension: "mov")
         view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         Player = AVPlayer.init(url: URL!)
@@ -79,7 +98,7 @@ class newEmailPass: UIViewController {
     }
     
     
-    func playerItemReachEnd(notification: NSNotification) {
+    @objc func playerItemReachEnd(notification: NSNotification) {
         Player.seek(to:kCMTimeZero)
         
     }
@@ -88,14 +107,13 @@ class newEmailPass: UIViewController {
 
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destinationViewController.
+ // Pass the selected object to the new view controller.
+ }
+ */
 

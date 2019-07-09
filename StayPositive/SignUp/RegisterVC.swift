@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import Foundation
+
+
 class RegisterVC: UIViewController {
 
     @IBOutlet weak var email: UITextField!

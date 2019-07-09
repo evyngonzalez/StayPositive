@@ -7,11 +7,22 @@
 
 import UIKit
 import AVFoundation
+import Firebase
+import FirebaseAuth
+
+
 class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     var Player: AVPlayer!
     var PlayerLayer: AVPlayerLayer!
-
+    
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "StartSegue", sender: UIPageViewController?.self)
+        }
+    }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewControllerIndex = VCArr.index(of: viewController) else {
             return nil
@@ -45,7 +56,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
         
         return VCArr[nextIndex]
     }
-
+    
     
     public func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return VCArr.count
@@ -65,8 +76,8 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
                 self.VCInstance(name: "ThirdVC"),
                 self.VCInstance(name: "FourthVC")]
     }()
-
-
+    
+    
     private func VCInstance(name: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
     }
@@ -88,7 +99,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
         PlayerLayer.frame = view.layer.frame
         Player.volume = 0
         
-
+        
         Player.actionAtItemEnd = AVPlayerActionAtItemEnd.none
         
         Player.play()
@@ -98,7 +109,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemReachEnd(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: Player.currentItem)
         
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         for view in self.view.subviews {
@@ -125,15 +136,15 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
     
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
