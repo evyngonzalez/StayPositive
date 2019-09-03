@@ -19,8 +19,6 @@ class newEmailPass: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var confirmPass: UITextField!
     
-    @IBOutlet weak var errorMessage: UILabel!
-    
     @IBOutlet weak var email: UITextField!
     
     @IBOutlet weak var password: UITextField!
@@ -51,10 +49,7 @@ class newEmailPass: UIViewController, UITextFieldDelegate {
                     self.databaseRef.child("users").child(user!.user.uid).child("email").setValue(self.email.text!)
                     let user = user?.user
                     print("User has Signed In")
-                    
-                    if user!.isEmailVerified {
-                        self.performSegue(withIdentifier: "signUp", sender: self)
-                    }
+                    self.performSegue(withIdentifier: "signUp", sender: self)
                 }
                 else {
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)

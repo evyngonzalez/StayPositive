@@ -129,7 +129,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
     
     
     
-    func playerItemReachEnd(notification: NSNotification) {
+    @objc func playerItemReachEnd(notification: NSNotification) {
         Player.seek(to:kCMTimeZero)
         
     }

@@ -9,6 +9,7 @@ target 'StayPositive' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 
   target 'StayPositiveTests' do
     inherit! :search_paths
