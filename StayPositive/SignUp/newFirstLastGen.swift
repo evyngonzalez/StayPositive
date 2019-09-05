@@ -67,9 +67,9 @@ class newFirstLastGen: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
         let datePicker = UIDatePicker()
         
-        datePicker.datePickerMode = UIDatePickerMode.date
+        datePicker.datePickerMode = UIDatePicker.Mode.date
         
-        datePicker.addTarget(self, action: #selector(newFirstLastGen.datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        datePicker.addTarget(self, action: #selector(newFirstLastGen.datePickerValueChanged(sender:)), for: UIControl.Event.valueChanged)
        
         bDay.inputView = datePicker
        
@@ -78,7 +78,7 @@ class newFirstLastGen: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         toolbar.tintColor = UIColor.white
         
         
-        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(newFirstLastGen.donePressed(sender:)))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(newFirstLastGen.donePressed(sender:)))
         
         toolbar.setItems([doneButton], animated: true)
         bDay.inputAccessoryView = toolbar
@@ -94,7 +94,7 @@ class newFirstLastGen: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         Player.volume = 0
         
         
-        Player.actionAtItemEnd = AVPlayerActionAtItemEnd.none
+        Player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
         
         Player.play()
         
@@ -105,12 +105,12 @@ class newFirstLastGen: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
 
 
-func playerItemReachEnd(notification: NSNotification) {
-    Player.seek(to:kCMTimeZero)
+@objc func playerItemReachEnd(notification: NSNotification) {
+    Player.seek(to:CMTime.zero)
     
 }
     
-    func donePressed(sender: UIBarButtonItem) {
+    @objc func donePressed(sender: UIBarButtonItem) {
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.medium
         formatter.timeStyle = DateFormatter.Style.none
@@ -120,7 +120,7 @@ func playerItemReachEnd(notification: NSNotification) {
     }
     
     
-    func datePickerValueChanged(sender: UIDatePicker) {
+    @objc func datePickerValueChanged(sender: UIDatePicker) {
         let formatter = DateFormatter()
         
         formatter.dateStyle = DateFormatter.Style.medium

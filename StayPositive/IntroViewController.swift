@@ -34,7 +34,7 @@ class IntroViewController: UIViewController {
         Player.volume = 0
         
         
-        Player.actionAtItemEnd = AVPlayerActionAtItemEnd.none
+        Player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
         
         Player.play()
         
@@ -44,8 +44,8 @@ class IntroViewController: UIViewController {
     }
     
     
-    func playerItemReachEnd(notification: NSNotification) {
-        Player.seek(to:kCMTimeZero)
+    @objc func playerItemReachEnd(notification: NSNotification) {
+        Player.seek(to:CMTime.zero)
         
     }
     

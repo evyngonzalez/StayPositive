@@ -18,7 +18,7 @@ class NewsFeedTable: UITableViewController, UIWebViewDelegate {
         super.viewDidLoad()
         
         tableView.estimatedRowHeight = 155.0
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         
     
     

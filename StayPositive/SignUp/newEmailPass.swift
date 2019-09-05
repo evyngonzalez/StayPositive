@@ -82,7 +82,7 @@ class newEmailPass: UIViewController, UITextFieldDelegate {
         Player.volume = 0
         
         
-        Player.actionAtItemEnd = AVPlayerActionAtItemEnd.none
+        Player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
         
         Player.play()
         
@@ -94,7 +94,7 @@ class newEmailPass: UIViewController, UITextFieldDelegate {
     
     
     @objc func playerItemReachEnd(notification: NSNotification) {
-        Player.seek(to:kCMTimeZero)
+        Player.seek(to:CMTime.zero)
         
     }
     

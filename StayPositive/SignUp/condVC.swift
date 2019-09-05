@@ -79,7 +79,7 @@ class condVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
             Player.volume = 0
             
             
-            Player.actionAtItemEnd = AVPlayerActionAtItemEnd.none
+            Player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
             
             Player.play()
             
@@ -90,8 +90,8 @@ class condVC: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         }
         
         
-        func playerItemReachEnd(notification: NSNotification) {
-            Player.seek(to:kCMTimeZero)
+        @objc func playerItemReachEnd(notification: NSNotification) {
+            Player.seek(to:CMTime.zero)
             
         }
         

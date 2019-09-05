@@ -76,19 +76,19 @@ class MultViewiFeedViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = 0
     }
     
-    func selectionDidChange(sender: UISegmentedControl) {
+    @objc func selectionDidChange(sender: UISegmentedControl) {
         updateView()
     }
     
     private func addViewCotrollerAsChildViewController(childViewController: UIViewController) {
-        addChildViewController(childViewController)
+        addChild(childViewController)
         
         view.addSubview(childViewController.view)
         
         childViewController.view.frame = view.bounds
         childViewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        childViewController.didMove(toParentViewController: self)
+        childViewController.didMove(toParent: self)
         
         
     }

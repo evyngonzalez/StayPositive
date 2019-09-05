@@ -24,7 +24,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = VCArr.index(of: viewController) else {
+        guard let viewControllerIndex = VCArr.firstIndex(of: viewController) else {
             return nil
         }
         
@@ -41,7 +41,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = VCArr.index(of: viewController) else {
+        guard let viewControllerIndex = VCArr.firstIndex(of: viewController) else {
             return nil
         }
         
@@ -64,7 +64,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
     
     public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         guard let firstViewController = viewControllers?.first,
-            let firsViewControllerIndex = VCArr.index(of: firstViewController) else {
+            let firsViewControllerIndex = VCArr.firstIndex(of: firstViewController) else {
                 return 0
         }
         return firsViewControllerIndex
@@ -100,7 +100,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
         Player.volume = 0
         
         
-        Player.actionAtItemEnd = AVPlayerActionAtItemEnd.none
+        Player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
         
         Player.play()
         
@@ -130,7 +130,7 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
     
     
     @objc func playerItemReachEnd(notification: NSNotification) {
-        Player.seek(to:kCMTimeZero)
+        Player.seek(to:CMTime.zero)
         
     }
     

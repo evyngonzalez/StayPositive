@@ -8,38 +8,49 @@
 
 import Foundation
 import UIKit
-import Firebase
-import FirebaseDatabase
+import FirebaseAuth
 import FirebaseStorage
+import FirebaseDatabase
+import Firebase
 
 
-class ProfileViewController: UIViewController, UINavigationControllerDelegate {
+class profileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    //variables
-    let storageRef = Storage.storage().reference()
+    @IBOutlet var profilePicture: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var pastChat: UITableView!
+    @IBOutlet var logout: UIBarButtonItem!
+    
+    let storageRef = Storage.storage().reference(forURL: "gs://staypositive-a3bb0.appspot.com/").child("profilePicture").child("")
+    
     let databaseRef = Database.database().reference()
-    
-    //outlets
-    @IBOutlet weak var profile_image: UIImageView!
-    @IBOutlet weak var unsernameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if Auth.auth().currentUser?.uid == nil{
-            logout()
-        }
         setupProfile()
-        
+        reloadUser()
     }
-    //actions
-    func logout() {
+    
+    @objc func handleSelectProfileImageView() {
+        
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        present(pickerController, animated: true, completion: nil)
+        print("Tapped profile")
+    }
+    
+    
+    @IBAction func saveStuff(_ sender: Any) {
+        saveChanges()
+    }
+    
+    @IBAction func didTapLogout(_ sender: Any) {
         do {
             try Auth.auth().signOut()
         }
         catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let initial = storyboard.instantiateInitialViewController()
         UIApplication.shared.keyWindow?.rootViewController = initial
@@ -47,28 +58,45 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBAction func uploadImageButton(_ sender: Any) {
         let picker = UIImagePickerController()
-        picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        picker.delegate = self
         picker.allowsEditing = true
-        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        picker.sourceType = UIImagePickerController.SourceType.photoLibrary
         self.present(picker, animated: true, completion: nil)
-    }
-    @IBAction func saveChanges(_ sender: Any) {
-        saveChanges()
+        print("Tapped the profile image")
     }
     
     
-    //func
+    
+    func sendEmailVerification(_ callback: ((Error?) -> ())? = nil){
+        Auth.auth().currentUser?.sendEmailVerification(completion: { (error) in
+            callback?(error)
+        })
+    }
+    
+    // reloading user. Sometimes used after updating or verifying email address etc.
+    func reloadUser(_ callback: ((Error?) -> ())? = nil){
+        Auth.auth().currentUser?.reload(completion: { (error) in
+            callback?(error)
+        })
+    }
+    
+    // Resetting password. Not yet implemented in this
+    
+    func sendPasswordReset(withEmail email: String, _ callback: ((Error?) -> ())? = nil){
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            callback?(error)
+        }
+    }
+    
     func setupProfile(){
-        
-        
-        profile_image.layer.cornerRadius = profile_image.frame.size.width/2
-        profile_image.clipsToBounds = true
+        profilePicture.layer.cornerRadius = profilePicture.frame.size.width/2
+        profilePicture.clipsToBounds = true
         if let uid = Auth.auth().currentUser?.uid{
             databaseRef.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let dict = snapshot.value as? [String: AnyObject]
                 {
-                    self.unsernameLabel.text = dict["username"] as? String
-                    if let profileImageURL = dict["pic"] as? String
+                    self.nameLabel.text = dict["username"] as? String
+                    if let profileImageURL = dict["profilePicture"] as? String
                     {
                         let url = URL(string: profileImageURL)
                         URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
@@ -77,27 +105,26 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
                                 return
                             }
                             DispatchQueue.main.async {
-                                self.profile_image?.image = UIImage(data: data!)
+                                self.profilePicture?.image = UIImage(data: data!)
                             }
                         }).resume()
                     }
                 }
             })
-            
         }
     }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         var selectedImageFromPicker: UIImage?
         
         if let editedImage = info["UIImagePickerControllerEditedImage"] as? UIImage{
             selectedImageFromPicker = editedImage
+            
         }else if let originalImage = info["UIImagePickerControllerOriginalImage"] as? UIImage{
             selectedImageFromPicker = originalImage
         }
         if let selectedImage = selectedImageFromPicker{
-            profile_image.image = selectedImage
+            profilePicture.image = selectedImage
         }
         dismiss(animated: true, completion: nil)
     }
@@ -108,9 +135,9 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
         
         let imageName = NSUUID().uuidString
         
-        let storedImage = storageRef.child("profile_images").child(imageName)
+        let storedImage = storageRef.child("profilePicture").child(imageName)
         
-        if let uploadData = UIImagePNGRepresentation(self.profile_image.image!)
+        if let uploadData = self.profilePicture.image!.pngData()
         {
             storedImage.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                 if error != nil{
@@ -123,16 +150,15 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate {
                         return
                     }
                     if let urlText = url?.absoluteString{
-                        self.databaseRef.child("users").child((Auth.auth().currentUser?.uid)!).updateChildValues(["pic" : urlText], withCompletionBlock: { (error, ref) in
+                        self.databaseRef.child("users").child((Auth.auth().currentUser?.uid)!).updateChildValues(["profilePicture" : urlText], withCompletionBlock: { (error, ref) in
                             if error != nil{
                                 print(error!)
                                 return
                             }
-                        })                    }
+                        })
+                    }
                 })
             })
         }
     }
-    
-    
 }

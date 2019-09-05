@@ -32,7 +32,7 @@ let picker = UIDatePicker()
     
     }
     
-    func donePressed() {
+    @objc func donePressed() {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         formatter.timeStyle = .none
