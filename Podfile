@@ -10,6 +10,7 @@ target 'StayPositive' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'JGProgressHUD'
 
   target 'StayPositiveTests' do
     inherit! :search_paths

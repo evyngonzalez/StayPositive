@@ -61,9 +61,6 @@ class newEmailPass: UIViewController, UITextFieldDelegate {
             }
         }
     }
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,7 +68,6 @@ class newEmailPass: UIViewController, UITextFieldDelegate {
         email.delegate = self
         password.delegate = self
         confirmPass.delegate = self
-        
         
         let URL = Bundle.main.url(forResource: "backgvid" , withExtension: "mov")
         view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
@@ -89,26 +85,8 @@ class newEmailPass: UIViewController, UITextFieldDelegate {
         view.layer.insertSublayer(PlayerLayer, at: 0)
         
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemReachEnd(notification:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: Player.currentItem)
-        
     }
-    
-    
     @objc func playerItemReachEnd(notification: NSNotification) {
         Player.seek(to:CMTime.zero)
-        
     }
-    
 }
-
-
-
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
- */
-

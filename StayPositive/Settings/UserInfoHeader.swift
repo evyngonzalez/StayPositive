@@ -11,7 +11,6 @@ import UIKit
 class UserInfoHeader: UIView {
     
     // MARK: - Properties
-    
     let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
@@ -39,7 +38,6 @@ class UserInfoHeader: UIView {
     }()
     
     // MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

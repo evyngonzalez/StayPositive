@@ -87,7 +87,7 @@ class PhoneAuthController: UIViewController, UINavigationControllerDelegate, UII
             
             if error == nil {
                 //do Something useful
-                print(verificationId)
+                print(verificationId as Any)
                 
                 guard let verifyId = verificationId else { return }
                 
@@ -98,7 +98,7 @@ class PhoneAuthController: UIViewController, UINavigationControllerDelegate, UII
                 self.performSegue(withIdentifier: "phoneAuth", sender: UIViewController?.self)
                 
             } else {
-                print("Unable to access secret verification code", error?.localizedDescription)
+                print("Unable to access secret verification code", error?.localizedDescription as Any)
             }
         }
     }

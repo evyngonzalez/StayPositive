@@ -66,6 +66,12 @@
 		D06EBF13231ED81B00CA4877 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EBF12231ED81B00CA4877 /* SettingsSection.swift */; };
 		D06EBF15231ED87500CA4877 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EBF14231ED87400CA4877 /* SettingsCell.swift */; };
 		D06EBF17231ED89C00CA4877 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EBF16231ED89C00CA4877 /* UserInfoHeader.swift */; };
+		D0F24D302321733200288555 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F24D2F2321733200288555 /* Authentication.swift */; };
+		D0F24D322321738B00288555 /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F24D312321738B00288555 /* Social.swift */; };
+		D0F24D34232173DE00288555 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F24D33232173DE00288555 /* General.swift */; };
+		D0F24D362321743200288555 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F24D352321743200288555 /* Store.swift */; };
+		D0F24D3A2321928700288555 /* Ref.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F24D392321928700288555 /* Ref.swift */; };
+		D0F24D42232198B700288555 /* PasswordChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F24D41232198B700288555 /* PasswordChange.swift */; };
 		EAB035B1B6E50081E6465502 /* Pods_StayPositiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58C51F1C32C3748EE661EA8 /* Pods_StayPositiveTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -157,6 +163,12 @@
 		D06EBF12231ED81B00CA4877 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D06EBF14231ED87400CA4877 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		D06EBF16231ED89C00CA4877 /* UserInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
+		D0F24D2F2321733200288555 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Authentication.swift; path = ../Authentication.swift; sourceTree = "<group>"; };
+		D0F24D312321738B00288555 /* Social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
+		D0F24D33232173DE00288555 /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		D0F24D352321743200288555 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		D0F24D392321928700288555 /* Ref.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ref.swift; sourceTree = "<group>"; };
+		D0F24D41232198B700288555 /* PasswordChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChange.swift; sourceTree = "<group>"; };
 		E58C51F1C32C3748EE661EA8 /* Pods_StayPositiveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayPositiveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8E0C7D65DE5AF53E9540E8E /* Pods-StayPositiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayPositiveUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StayPositiveUITests/Pods-StayPositiveUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				929985321F49FE3400DF4167 /* Main.storyboard */,
+				D0F24D392321928700288555 /* Ref.swift */,
 				D06EBF18231ED8C900CA4877 /* Settings */,
 				BB0F977E2002C49C000D25B7 /* PageVC.swift */,
 				BB0F977C2002C461000D25B7 /* GoogleService-Info.plist */,
@@ -359,7 +372,12 @@
 				D06EBF10231EBC0E00CA4877 /* SettingsController.swift */,
 				D06EBF12231ED81B00CA4877 /* SettingsSection.swift */,
 				D06EBF14231ED87400CA4877 /* SettingsCell.swift */,
+				D0F24D41232198B700288555 /* PasswordChange.swift */,
 				D06EBF16231ED89C00CA4877 /* UserInfoHeader.swift */,
+				D0F24D2F2321733200288555 /* Authentication.swift */,
+				D0F24D312321738B00288555 /* Social.swift */,
+				D0F24D33232173DE00288555 /* General.swift */,
+				D0F24D352321743200288555 /* Store.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -439,6 +457,11 @@
 						DevelopmentTeam = ANXHX3BNF5;
 						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 					929985101F49F96400DF4167 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -517,6 +540,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-StayPositive/Pods-StayPositive-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -524,6 +548,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -610,6 +635,7 @@
 				BB9A64F720B3D656006E56DA /* newEmailPass.swift in Sources */,
 				403D337321D5EEE4005A2CAC /* NewsFeedTable.swift in Sources */,
 				BBCB185C21228C28006B2005 /* SessionsViewController.swift in Sources */,
+				D0F24D42232198B700288555 /* PasswordChange.swift in Sources */,
 				D06EBF11231EBC0E00CA4877 /* SettingsController.swift in Sources */,
 				92940ECB1F4CF6AB00F85214 /* MoreInfoVC.swift in Sources */,
 				D06EBF0F231D943400CA4877 /* VerificationController.swift in Sources */,
@@ -619,6 +645,9 @@
 				929985501F4A08B500DF4167 /* FeedViewController.swift in Sources */,
 				BBC1431420B5895B00EE32B9 /* condVC.swift in Sources */,
 				D00E6E2922E0F0E2004A8323 /* ChatCellTableView.swift in Sources */,
+				D0F24D322321738B00288555 /* Social.swift in Sources */,
+				D0F24D362321743200288555 /* Store.swift in Sources */,
+				D0F24D3A2321928700288555 /* Ref.swift in Sources */,
 				D06CCE5E2316CEE8006F3F62 /* ProfileViewController.swift in Sources */,
 				929985531F4A08B500DF4167 /* ChatViewController.swift in Sources */,
 				BB5544FB1FF4856900C12365 /* WalkthroughViewController.swift in Sources */,
@@ -636,10 +665,12 @@
 				D06EBF17231ED89C00CA4877 /* UserInfoHeader.swift in Sources */,
 				BB6CE9E01FF992A400C54CBB /* GenderTextField.swift in Sources */,
 				D06CCE602316D427006F3F62 /* ArticleFeedViewController.swift in Sources */,
+				D0F24D34232173DE00288555 /* General.swift in Sources */,
 				4060F26821D0D4A0009C431D /* NewsViewController.swift in Sources */,
 				D06CCE5C2315C8FF006F3F62 /* homeFeedViewController.swift in Sources */,
 				BBCB1858212285E7006B2005 /* MultViewiFeedViewController.swift in Sources */,
 				92940EC71F4CC6BD00F85214 /* LoginVC.swift in Sources */,
+				D0F24D302321733200288555 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

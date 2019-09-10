@@ -12,14 +12,16 @@ protocol SectionType: CustomStringConvertible {
 
 enum SettingsSection: Int, CaseIterable, CustomStringConvertible {
     case Authentication
-    case General
     case Store
+    case Social
+    case General
     
     var description: String {
         switch self {
         case .Authentication: return "Authentication"
-        case .General: return "General"
         case .Store: return "Store"
+        case .Social: return "Social"
+        case .General: return "General"
             
         }
     }
@@ -34,8 +36,21 @@ enum AuthOptions: Int, CaseIterable, SectionType {
     
     var description: String {
         switch self {
-        case .changeEmail: return "Change Email Address"
-        case .changePass: return "Change Password"
+        case .changeEmail: return "ChangeEmailAddress"
+        case .changePass: return "ChangePassword"
+        }
+    }
+}
+
+enum SocialOptions: Int, CaseIterable, SectionType {
+    
+    case inviteFriends
+    
+    var containsSwitch: Bool { return false }
+    
+    var description: String {
+        switch self {
+        case .inviteFriends: return "InviteFriends"
         }
     }
 }
@@ -49,24 +64,22 @@ enum StoreOptions: Int, CaseIterable, SectionType {
     
     var description: String {
         switch self {
-        case .oneTimePurchases: return "One Time Purchases"
-        case .subscriptions: return "Subscriptions"
+        case .oneTimePurchases: return "Purchases"
+        case .subscriptions: return "Purchases"
         }
     }
 }
 
 enum GeneralOptions: Int, CaseIterable, SectionType {
-    case notifications
-    case email
-    case reportCrashes
+    case aboutStayPositive
+    case privacyPolicy
     
     var containsSwitch: Bool { return false }
     
     var description: String {
         switch self {
-        case .notifications: return "Notifications"
-        case .email: return "Email"
-        case .reportCrashes: return "Report Crashes"
+        case .aboutStayPositive: return "About"
+        case .privacyPolicy: return "About"
         }
     }
 }

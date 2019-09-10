@@ -16,18 +16,15 @@ private let reuseIdentifier = "SettingsCell"
 class SettingsController: UIViewController {
     
     // MARK: - Properties
-    
     var tableView: UITableView!
     var userInfoHeader: UserInfoHeader!
     
     // MARK: - Init
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
     }
     // MARK: - Helper Functions
-    
     func configureTableView() {
         tableView = UITableView()
         tableView.delegate = self
@@ -64,8 +61,9 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
         
         switch section {
         case .Authentication: return AuthOptions.allCases.count
-        case .General: return GeneralOptions.allCases.count
         case .Store: return StoreOptions.allCases.count
+        case .Social: return SocialOptions.allCases.count
+        case .General: return GeneralOptions.allCases.count
             
         }
     }
@@ -92,6 +90,30 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
         return 40
     }
     
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SettingsCell
+//        guard let section = SettingsSection(rawValue: indexPath.section) else { return UITableViewCell() }
+//
+//        switch section {
+//        case .Authentication:
+//            let Authentication = AuthOptions(rawValue: indexPath.row)
+//            cell.sectionType = Authentication
+//        case .Store:
+//            let Store = StoreOptions(rawValue: indexPath.row)
+//            cell.sectionType = Store
+//        case .Social:
+//            let Social = SocialOptions(rawValue: indexPath.row)
+//            cell.sectionType = Social
+//        case .General:
+//            let General = GeneralOptions(rawValue: indexPath.row)
+//            cell.sectionType = General
+//
+//        }
+//
+//        return cell
+//    }
+
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SettingsCell
         guard let section = SettingsSection(rawValue: indexPath.section) else { return UITableViewCell() }
@@ -100,27 +122,65 @@ extension SettingsController: UITableViewDelegate, UITableViewDataSource {
         case .Authentication:
             let Authentication = AuthOptions(rawValue: indexPath.row)
             cell.sectionType = Authentication
-        case .General:
-            let General = GeneralOptions(rawValue: indexPath.row)
-            cell.sectionType = General
         case .Store:
             let Store = StoreOptions(rawValue: indexPath.row)
             cell.sectionType = Store
+        case .Social:
+            let Social = SocialOptions(rawValue: indexPath.row)
+            cell.sectionType = Social
+        case .General:
+            let General = GeneralOptions(rawValue: indexPath.row)
+            cell.sectionType = General
+        
         }
         
         return cell
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        tableView.deselectRow(at: indexPath, animated: true)
+//
+//        guard let section = SettingsSection(rawValue: indexPath.section) else { return }
+//
+//        switch section {
+//        case .Authentication:
+//            self.performSegue(withIdentifier: "Authentication", sender: self)
+//            print(AuthOptions(rawValue: indexPath.row)?.description as Any)
+//        case .Store:
+//            self.performSegue(withIdentifier: "Store", sender: self)
+//            print(StoreOptions(rawValue: indexPath.row)?.description as Any)
+//        case .Social:
+//            self.performSegue(withIdentifier: "Social", sender: self)
+//            print(SocialOptions(rawValue: indexPath.row)?.description as Any)
+//        case .General:
+//            self.performSegue(withIdentifier: "General", sender: self)
+//            print(GeneralOptions(rawValue: indexPath.row)?.description as Any)
+//
+//        }
+//    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
         guard let section = SettingsSection(rawValue: indexPath.section) else { return }
-        
+
         switch section {
         case .Authentication:
+            let auth = (AuthOptions(rawValue: indexPath.row)?.description as Any)
+            self.performSegue(withIdentifier: auth as! String, sender: self)
             print(AuthOptions(rawValue: indexPath.row)?.description as Any)
-        case .General:
-            print(GeneralOptions(rawValue: indexPath.row)?.description as Any)
         case .Store:
+            let store = (StoreOptions(rawValue: indexPath.row)?.description as Any)
+            self.performSegue(withIdentifier: store as! String, sender: self)
             print(StoreOptions(rawValue: indexPath.row)?.description as Any)
+        case .Social:
+            let social = (SocialOptions(rawValue: indexPath.row)?.description as Any)
+            self.performSegue(withIdentifier: social as! String, sender: self)
+            print(SocialOptions(rawValue: indexPath.row)?.description as Any)
+        case .General:
+            let general = (GeneralOptions(rawValue: indexPath.row)?.description as Any)
+            self.performSegue(withIdentifier: general as! String, sender: self)
+            print(GeneralOptions(rawValue: indexPath.row)?.description as Any)
         }
     }
 }
