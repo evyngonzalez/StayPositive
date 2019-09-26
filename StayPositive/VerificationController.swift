@@ -49,7 +49,6 @@ class VerificationController: UIViewController {
                 print(success)
                 print("User Signed in successfully")
                 self.performSegue(withIdentifier: "codeCorrect", sender: UIViewController?.self)
-                
             } else {
                 print("something went wrong. \(error?.localizedDescription)")
             }

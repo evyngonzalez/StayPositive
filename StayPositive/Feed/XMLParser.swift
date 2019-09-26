@@ -54,7 +54,6 @@ class FeedParser: NSObject, XMLParserDelegate
                 
                 return
             }
-            
             /// parse our xml data
             print(data)
             let parser = XMLParser(data: data)

@@ -15,5 +15,5 @@ let EMPTY_PHOTO = "Please choose your profile image"
 let EMPTY_EMAIL = "Please enter your email address"
 let EMPTY_PASSWORD = "Please enter your password"
 let EMPTY_EMAIL_RESET = "Please enter a valid email address"
-let SUCCESS_EMAIL_RESET = "CONGRATULATONS BUDDY!"
+let SUCCESS_EMAIL_RESET = "Email succesfully reset!"
 

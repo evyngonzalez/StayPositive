@@ -15,43 +15,26 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let searchController = UISearchController(searchResultsController: nil)
 
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         self.tableView.tableHeaderView = searchController.searchBar
-        
         self.searchBr.isHidden = true
-        
         tableView.delegate = self
         tableView.dataSource = self
         searchBr.delegate = self
         searchBr.returnKeyType = UIReturnKeyType.done
         
-        
-        
-        
     }
-
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
         
           }
-
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
     }
-
-
-
-
 }

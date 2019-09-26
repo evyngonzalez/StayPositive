@@ -8,32 +8,21 @@
 
 import UIKit
 
-class NewsFeedTable: UITableViewController, UIWebViewDelegate {
+class NewsFeedTable: UITableViewController {
 
      private var rssItems: [RSSItem]?
      private var cellStates: [CellState]?
     
-    @IBOutlet weak var webView: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.estimatedRowHeight = 155.0
         tableView.rowHeight = UITableView.automaticDimension
-        
-    
-    
-    
 
         
         let urls:[String] = ["https://www.nimh.nih.gov/site-info/index-rss.atom?format=xml", "https://blogs.psychcentral.com/feed","https://www.psychologytoday.com/blog/both-sides-the-couch/feed"]
        fetchData(urls: urls)
-        
-    
-        
-        
-        
-        
-        
     }
     
     private func fetchData(urls: [String])
@@ -63,7 +52,6 @@ class NewsFeedTable: UITableViewController, UIWebViewDelegate {
         // Return the number of sections
         return 1
     }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         guard let rssItems = rssItems else {
@@ -85,7 +73,6 @@ class NewsFeedTable: UITableViewController, UIWebViewDelegate {
                 cell.descriptionLabel.numberOfLines = (cellStates[indexPath.row] == .expanded) ? 0 : 4
             }
         }
-        
         return cell
     }
     
@@ -93,19 +80,12 @@ class NewsFeedTable: UITableViewController, UIWebViewDelegate {
     {
         tableView.deselectRow(at: indexPath, animated: true)
         let cell = tableView.cellForRow(at: indexPath) as! NewsTableViewCell
-        
         tableView.beginUpdates()
         cell.descriptionLabel.numberOfLines = (cell.descriptionLabel.numberOfLines == 0) ? 3 : 0
-        
         cellStates?[indexPath.row] = (cell.descriptionLabel.numberOfLines == 0) ? .expanded : .collapsed
-        
         tableView.endUpdates()
-        
-       
-        
+
     }
-    
-   
 }
 
 /*
