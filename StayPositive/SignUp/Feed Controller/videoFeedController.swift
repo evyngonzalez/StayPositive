@@ -18,7 +18,7 @@ class videoFeedController: UITableViewController {
     
     var audioPlayer = AVAudioPlayer()
     var posts = [Post]()
-    let musicRef = Storage.storage().reference(forURL: "gs://soundplg-5c8e6.appspot.com/").child("songAudio").child("")
+    let musicRef = Storage.storage().reference(forURL: "").child("").child("")
     let databaseRef = Database.database().reference()
     
     override func viewDidLoad() {
@@ -27,9 +27,9 @@ class videoFeedController: UITableViewController {
         downloadVideoPost()
     }
     
-    let localURL = URL(string: "songAudio")!
+    let localURL = URL(string: "")!
     func downloadVideoPost(){
-        let userPostRef = self.databaseRef.child("memePost")
+        let userPostRef = self.databaseRef.child("")
         userPostRef.queryOrdered(byChild: "time").observe(.childAdded, with: {(snapshot) in
             if let postAdd  = snapshot.value as? NSDictionary {
                 let dict = snapshot.value as? [String: AnyObject]
