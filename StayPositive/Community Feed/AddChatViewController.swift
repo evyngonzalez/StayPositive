@@ -9,6 +9,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class AddChatViewController: UIViewController {
     

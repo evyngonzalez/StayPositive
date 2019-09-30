@@ -9,4 +9,4 @@
 import Foundation
 import Firebase
 
-let BASE_URL = Database.database().reference()
+let BASE_URL = "https://staypositive-a3bb0.firebaseio.com/"

@@ -27,7 +27,7 @@ class DataService {
     }
     
     var CURRENT_USER_REF: DatabaseReference! {
-        let userID = UserDefaults.standard.value(forKey: "uid") as! String
+        let userID = UserDefaults.standard.value(forKey: "user") as! String
         
         let currentUser = Database.database().reference(fromURL: "\(String(describing: BASE_REF))").child(byAppendingPath: "users").child(byAppendingPath: userID)
         
