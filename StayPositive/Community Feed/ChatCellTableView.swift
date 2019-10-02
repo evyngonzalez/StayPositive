@@ -14,7 +14,7 @@ class ChatCellTableViewCell: UITableViewCell {
     @IBOutlet weak var chatText: UITextView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var totalVotesLabel: UILabel!
-    @IBOutlet var thumbVoteImage: UIImageView!
+    @IBOutlet weak var thumbVoteImage: UIImageView!
     
     var chat: Chat!
     var voteRef: DatabaseReference!
@@ -26,7 +26,7 @@ class ChatCellTableViewCell: UITableViewCell {
         self.totalVotesLabel.text = "Total Votes: \(chat.chatVotes)"
         self.usernameLabel.text = chat.username
                 
-        voteRef = DataService.dataService.CURRENT_USER_REF.child(byAppendingPath: "votes").child(byAppendingPath: chat.chatKey)
+        voteRef = DataService.dataService.CURRENT_USER_REF.child("votes").child(chat.chatKey)
                 
         voteRef.observeSingleEvent(of: .value, with: { snapshot in
             if let thumbsUpDown = snapshot.value as? NSNull {
@@ -40,9 +40,8 @@ class ChatCellTableViewCell: UITableViewCell {
         })
     }
     
-    func voteTapped(sender: UITapGestureRecognizer) {
-        
-        
+    @IBAction func voteTapped(_ sender: Any) {
+
         voteRef.observeSingleEvent(of: .value, with: { snapshot in
             
             if let thumbsUpDown = snapshot.value as? NSNull {
@@ -63,7 +62,6 @@ class ChatCellTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-            
         let tap = UITapGestureRecognizer(target: self, action: Selector(("voteTapped:")))
         tap.numberOfTapsRequired = 1
         thumbVoteImage.addGestureRecognizer(tap)

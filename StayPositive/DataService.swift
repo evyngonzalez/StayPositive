@@ -13,7 +13,6 @@ import FirebaseDatabase
 class DataService {
     static let dataService = DataService()
     
-    
     private var _BASE_REF = Database.database().reference(fromURL: "\(BASE_URL)")
     private var _USER_REF = Database.database().reference(fromURL: "\(BASE_URL)/users")
     private var _CHAT_REF = Database.database().reference(fromURL: "\(BASE_URL)/chats")
@@ -27,34 +26,20 @@ class DataService {
     }
     
     var CURRENT_USER_REF: DatabaseReference! {
-        let userID = UserDefaults.standard.value(forKey: "user") as! String
+        let userID = UserDefaults.standard.value(forKey: "verificationId") as! String
         
-        let currentUser = Database.database().reference(fromURL: "\(String(describing: BASE_REF))").child(byAppendingPath: "users").child(byAppendingPath: userID)
-        
+        let currentUser = Database.database().reference(fromURL: "https://staypositive-a3bb0.firebaseio.com").child("users").child(userID)
         return currentUser
     }
-    
     var CHAT_REF: DatabaseReference! {
         return _CHAT_REF
     }
-    
     func createNewAccount(uid: String, user: Dictionary<String, String>) {
         
-        // A User is born.
-        
-        USER_REF.child(byAppendingPath: uid).setValue(user)
+            USER_REF.child(uid).setValue(user)
     }
-    
     func createNewChat(chat: Dictionary<String, AnyObject>) {
-        
-        // Save the chat
-        // CHAT_REF is the parent of the new chat: "chats".
-        // childByAutoId() saves the chat and gives it its own ID.
-        
         let firebaseNewChat = CHAT_REF.childByAutoId()
-        
-        // setValue() saves to Firebase.
-        
         firebaseNewChat.setValue(chat)
     }
 }

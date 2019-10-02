@@ -18,10 +18,7 @@ class VerificationController: UIViewController {
     @IBOutlet var CodeText: UITextField!
     @IBOutlet var VerifyButton: UIButton!
     
-    
     //Variables
-    
-    
     
     //Constants
     
@@ -32,8 +29,6 @@ class VerificationController: UIViewController {
     }
     
     //Functions
-    
-    
     
     //Actions
     @IBAction func VerifyOTP(_ sender: Any) {

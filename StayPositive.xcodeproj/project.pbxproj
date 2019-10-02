@@ -38,7 +38,6 @@
 		BB06BA9C1FBA3BAB00395A90 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06BA9B1FBA3BAB00395A90 /* IntroViewController.swift */; };
 		BB06BA9E1FBA801C00395A90 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06BA9D1FBA801C00395A90 /* RoundedButton.swift */; };
 		BB0F977920029BC3000D25B7 /* IMG_5401.mov in Resources */ = {isa = PBXBuildFile; fileRef = BB0F977820029BC3000D25B7 /* IMG_5401.mov */; };
-		BB0F977D2002C461000D25B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB0F977C2002C461000D25B7 /* GoogleService-Info.plist */; };
 		BB0F977F2002C49C000D25B7 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F977E2002C49C000D25B7 /* PageVC.swift */; };
 		BB1FA40A1FB2B05400FEF2A2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1FA4091FB2B05400FEF2A2 /* AVFoundation.framework */; };
 		BB5544FB1FF4856900C12365 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5544FA1FF4856900C12365 /* WalkthroughViewController.swift */; };
@@ -66,6 +65,7 @@
 		D06EBF13231ED81B00CA4877 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EBF12231ED81B00CA4877 /* SettingsSection.swift */; };
 		D06EBF15231ED87500CA4877 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EBF14231ED87400CA4877 /* SettingsCell.swift */; };
 		D06EBF17231ED89C00CA4877 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06EBF16231ED89C00CA4877 /* UserInfoHeader.swift */; };
+		D0A4B46C2344E73300EE9E2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0A4B46B2344E73200EE9E2A /* GoogleService-Info.plist */; };
 		D0EF6CFF233CFD4B0043A375 /* audioFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EF6CFE233CFD4B0043A375 /* audioFeedController.swift */; };
 		D0EF6D01233CFD850043A375 /* audioFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EF6D00233CFD850043A375 /* audioFeedCell.swift */; };
 		D0EF6D03233CFDD30043A375 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EF6D02233CFDD30043A375 /* Post.swift */; };
@@ -142,7 +142,6 @@
 		BB06BA9B1FBA3BAB00395A90 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		BB06BA9D1FBA801C00395A90 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		BB0F977820029BC3000D25B7 /* IMG_5401.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMG_5401.mov; sourceTree = "<group>"; };
-		BB0F977C2002C461000D25B7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BB0F977E2002C49C000D25B7 /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		BB1FA4091FB2B05400FEF2A2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BB5544FA1FF4856900C12365 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +169,7 @@
 		D06EBF12231ED81B00CA4877 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		D06EBF14231ED87400CA4877 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		D06EBF16231ED89C00CA4877 /* UserInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
+		D0A4B46B2344E73200EE9E2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0EF6CFE233CFD4B0043A375 /* audioFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioFeedController.swift; sourceTree = "<group>"; };
 		D0EF6D00233CFD850043A375 /* audioFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioFeedCell.swift; sourceTree = "<group>"; };
 		D0EF6D02233CFDD30043A375 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -279,7 +279,6 @@
 				D0F24D392321928700288555 /* Ref.swift */,
 				D06EBF18231ED8C900CA4877 /* Settings */,
 				BB0F977E2002C49C000D25B7 /* PageVC.swift */,
-				BB0F977C2002C461000D25B7 /* GoogleService-Info.plist */,
 				BB0F977820029BC3000D25B7 /* IMG_5401.mov */,
 				BBF7B6FA20B285DB00DC52C3 /* backgvid.mov */,
 				D0EF6D04233CFE200043A375 /* Model */,
@@ -302,6 +301,7 @@
 				9299855E1F4A0C8600DF4167 /* gifRun.swift */,
 				929985611F4A0C9800DF4167 /* sunsetbyevyn.gif */,
 				929985341F49FE5B00DF4167 /* Launch Screen.storyboard */,
+				D0A4B46B2344E73200EE9E2A /* GoogleService-Info.plist */,
 				9299850C1F49F96300DF4167 /* Info.plist */,
 			);
 			path = StayPositive;
@@ -547,7 +547,7 @@
 				929985331F49FE3400DF4167 /* Main.storyboard in Resources */,
 				929985351F49FE5B00DF4167 /* Launch Screen.storyboard in Resources */,
 				929985081F49F96300DF4167 /* Assets.xcassets in Resources */,
-				BB0F977D2002C461000D25B7 /* GoogleService-Info.plist in Resources */,
+				D0A4B46C2344E73300EE9E2A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

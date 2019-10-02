@@ -29,7 +29,7 @@ class Authentication: UIViewController {
     @IBAction func Send(_ sender: Any) {
         
         if credential != nil {
-        user?.reauthenticate(with: credential!) { error in
+            user?.reauthenticate(with: credential!, completion: { (nil, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else {
@@ -37,7 +37,7 @@ class Authentication: UIViewController {
                 Auth.auth().currentUser?.updateEmail(to: self.InfoText.text!) { (error) in
                 }
             }
-        }
+        })
         } else {
             print("An error happened buddy. Credentials must be nil or something")
             let forgotPasswordAlert = UIAlertController(title: "Enter credentials", message: "Enter email address and password", preferredStyle: .alert)

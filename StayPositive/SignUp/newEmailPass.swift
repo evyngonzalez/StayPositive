@@ -12,19 +12,20 @@ import AVFoundation
 import FirebaseAuth
 
 class newEmailPass: UIViewController, UITextFieldDelegate {
+    
     var Player: AVPlayer!
     var PlayerLayer: AVPlayerLayer!
     
+    @IBOutlet var ProfilePicture: UIImageView!
     @IBOutlet weak var signUp: UIButton!
-    
     @IBOutlet weak var confirmPass: UITextField!
-    
     @IBOutlet weak var email: UITextField!
-    
     @IBOutlet weak var password: UITextField!
-    
+    @IBOutlet weak var usernameText: UITextField!
     
     var databaseRef = Database.database().reference()
+    let stayPositiveString = "gs://staypositive-a3bb0.appspot.com/"
+    var selectedImage: UIImage?
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
         email.resignFirstResponder()
@@ -45,10 +46,24 @@ class newEmailPass: UIViewController, UITextFieldDelegate {
         else{
             Auth.auth().createUser(withEmail: email.text!, password: password.text!){ (user, error) in
                 if error == nil {
-                    
-                    self.databaseRef.child("users").child(user!.user.uid).child("email").setValue(self.email.text!)
-                    let user = user?.user
-                    print("User has Signed In")
+                self.databaseRef.child("users").child(user!.user.uid).child("email").setValue(self.email.text!)
+                    let user = user?.user.uid
+                    let storageRef = Storage.storage().reference(forURL: self.stayPositiveString).child("profilePicture").child("")
+                    let text = self.usernameText.text!
+                    self.databaseRef.child("users").child(user!).child("username").setValue(text)
+
+                    if let profileImage = self.selectedImage, let imageData = profileImage.jpegData(compressionQuality: 0.1) {
+                        storageRef.putData(imageData, metadata: nil, completion: { (metaData, error) in
+                            if error != nil {
+                                return
+                            }
+                            let profileImageURL = storageRef.child("\(profileImage)")
+                            let ref = Database.database().reference()
+                            let userReference = ref.child("users")
+                            let newUserReference = userReference.child(user!)
+                            newUserReference.setValue(["email": self.email.text!, "profileImageURL": profileImageURL])
+                        })
+                    }
                     self.performSegue(withIdentifier: "signUp", sender: self)
                 }
                 else {
@@ -76,7 +91,6 @@ class newEmailPass: UIViewController, UITextFieldDelegate {
         PlayerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         PlayerLayer.frame = view.layer.frame
         Player.volume = 0
-        
         
         Player.actionAtItemEnd = AVPlayer.ActionAtItemEnd.none
         

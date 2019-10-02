@@ -56,7 +56,7 @@ class Chat {
         
         // The above properties are assigned to their key.
         
-        self._chatRef = DataService.dataService.CHAT_REF.child(byAppendingPath: self._chatKey)
+        self._chatRef = DataService.dataService.CHAT_REF.child(self._chatKey)
     }
     
     func addSubtractVote(addVote: Bool) {
