@@ -40,12 +40,9 @@ class NewsFeedTable: UITableViewController {
         }
 
     }
-    
-    
     func imgFetch(){
     
     }
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {

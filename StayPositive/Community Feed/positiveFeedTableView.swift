@@ -59,5 +59,6 @@ class positiveFeedTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Cell Tapped")
+        performSegue(withIdentifier: "viewChat", sender: self)
     }
 }

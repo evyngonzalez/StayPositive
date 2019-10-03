@@ -13,23 +13,20 @@ import FirebaseDatabase
 
 class AddChatViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet var saveChatButton: UIButton!
+    @IBOutlet var saveChatButton: UIBarButtonItem!
     @IBOutlet weak var chatField: UITextField!
     
     var currentUsername = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Error with the code here")
-        subscribeToKeyboardNotifications()
-        }
+        
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        subscribeToKeyboardNotifications()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        unsubscribeFromKeyboardNotifications()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -47,7 +44,6 @@ class AddChatViewController: UIViewController, UITextFieldDelegate {
             ]
             // Send it over to DataService to seal the deal.
             DataService.dataService.createNewChat(chat: newChat)
-            
             if let navController = self.navigationController {
                 navController.popViewController(animated: true)
             }

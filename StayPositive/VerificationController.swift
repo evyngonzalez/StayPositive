@@ -41,11 +41,11 @@ class VerificationController: UIViewController {
         
         Auth.auth().signIn(with: credentials) { (success, error) in
             if error == nil {
-                print(success)
+                print(success ?? "Error in code")
                 print("User Signed in successfully")
                 self.performSegue(withIdentifier: "codeCorrect", sender: UIViewController?.self)
             } else {
-                print("something went wrong. \(error?.localizedDescription)")
+                print("something went wrong. \(error?.localizedDescription ?? "Error in code")")
             }
         }
         
