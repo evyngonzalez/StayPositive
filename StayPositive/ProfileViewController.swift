@@ -20,6 +20,7 @@ class profileViewController: UIViewController, UINavigationControllerDelegate, U
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var pastChat: UITableView!
     @IBOutlet var logout: UIBarButtonItem!
+    @IBOutlet var saveButton: UIButton!
     
     let storageRef = Storage.storage().reference(forURL: "gs://staypositive-a3bb0.appspot.com/").child("profilePicture").child("")
     
@@ -29,6 +30,7 @@ class profileViewController: UIViewController, UINavigationControllerDelegate, U
         super.viewDidLoad()
         setupProfile()
         reloadUser()
+        saveButton.isHidden = true
     }
     
     @objc func handleSelectProfileImageView() {
@@ -42,6 +44,7 @@ class profileViewController: UIViewController, UINavigationControllerDelegate, U
     
     @IBAction func saveStuff(_ sender: Any) {
         saveChanges()
+        saveButton.isHidden = true
     }
     
     @IBAction func didTapLogout(_ sender: Any) {
@@ -57,6 +60,7 @@ class profileViewController: UIViewController, UINavigationControllerDelegate, U
     }
     
     @IBAction func uploadImageButton(_ sender: Any) {
+        saveButton.isHidden = false
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = true
@@ -113,7 +117,7 @@ class profileViewController: UIViewController, UINavigationControllerDelegate, U
             })
         }
     }
-    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         
         var selectedImageFromPicker: UIImage?
         

@@ -64,7 +64,7 @@ class PhoneAuthController: UIViewController, UINavigationControllerDelegate, UII
                 guard let verifyId = verificationId else { return }
                 self.userDefaults.set(verifyId, forKey: "verificationId")
                 self.userDefaults.synchronize()
-                self.performSegue(withIdentifier: "phoneAuth", sender: UIViewController?.self)
+                self.performSegue(withIdentifier: "PhoneSegue", sender: UIViewController?.self)
             } else {
                 print("Unable to access secret verification code", error?.localizedDescription as Any)
             }

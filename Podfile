@@ -11,6 +11,8 @@ target 'StayPositive' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'JGProgressHUD'
+  pod 'ADCountryPicker'
+  pod 'TextFieldEffects'
 
   target 'StayPositiveTests' do
     inherit! :search_paths
