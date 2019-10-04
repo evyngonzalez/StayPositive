@@ -1222,10 +1222,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6w9-0J-TVv">
-                                <rect key="frame" x="62.5" y="143.5" width="250" height="380"/>
+                                <rect key="frame" x="62.5" y="141.5" width="250" height="384"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nHo-P1-ssT">
-                                        <rect key="frame" x="92.5" y="0.0" width="65" height="50"/>
+                                        <rect key="frame" x="92.5" y="0.0" width="65.5" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePicture" translatesAutoresizingMaskIntoConstraints="NO" id="HYR-q9-IJK">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -1235,7 +1235,7 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfC-ae-bdz">
-                                                <rect key="frame" x="54" y="0.0" width="11" height="22"/>
+                                                <rect key="frame" x="54" y="0.0" width="11.5" height="22"/>
                                                 <state key="normal" image="Plus Sign">
                                                     <color key="titleColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -1326,10 +1326,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3f-Mx-Tia">
-                                        <rect key="frame" x="98" y="350" width="54" height="30"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Sign Up">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3f-Mx-Tia">
+                                        <rect key="frame" x="75" y="350" width="100" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="KsG-ks-WIF"/>
+                                            <constraint firstAttribute="height" constant="34" id="yVI-0k-xBh"/>
+                                        </constraints>
+                                        <state key="normal" image="SignUp">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -1372,7 +1375,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="ywh-KU-lpk">
-                                <rect key="frame" x="62.5" y="276" width="250" height="115"/>
+                                <rect key="frame" x="62.5" y="279" width="250" height="109"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5a2-t5-uuv" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
@@ -1391,9 +1394,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1J-fB-Rbr">
-                                        <rect key="frame" x="109" y="85" width="32" height="30"/>
-                                        <state key="normal" title="Next">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1J-fB-Rbr">
+                                        <rect key="frame" x="90" y="85" width="70" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="8xe-Ps-fvW"/>
+                                            <constraint firstAttribute="width" constant="70" id="Daw-TO-3hJ"/>
+                                        </constraints>
+                                        <state key="normal" image="Next">
                                             <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -1433,7 +1440,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="zpy-s3-2D7">
-                                <rect key="frame" x="62.5" y="276" width="250" height="115"/>
+                                <rect key="frame" x="62.5" y="279" width="250" height="109"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verification Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V7H-vr-7Da" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
@@ -1453,13 +1460,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDS-6Q-kgU">
-                                        <rect key="frame" x="100" y="85" width="50" height="30"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDS-6Q-kgU">
+                                        <rect key="frame" x="90" y="85" width="70" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="wUp-zs-GLy"/>
+                                            <constraint firstAttribute="height" constant="24" id="v0G-k5-VyW"/>
+                                            <constraint firstAttribute="width" constant="70" id="wUp-zs-GLy"/>
                                         </constraints>
-                                        <state key="normal" title="Verify">
+                                        <state key="normal" image="Verify">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -3126,7 +3133,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3o7-ym-8QA">
                                         <rect key="frame" x="43" y="0.0" width="34" height="30"/>
                                         <state key="normal" title="Save">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="saveStuff:" destination="sm2-Sh-63S" eventType="touchUpInside" id="0rm-JX-gxO"/>
@@ -3177,13 +3184,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="profile" id="Ub0-gH-SlJ">
                         <barButtonItem key="leftBarButtonItem" title="Log Out" id="y1w-5o-Bvr">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapLogout:" destination="sm2-Sh-63S" id="GD7-Ur-yMY"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="WeTSettings" id="XNb-oi-v37">
-                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <barButtonItem key="rightBarButtonItem" image="Settings" id="XNb-oi-v37">
+                            <color key="tintColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="QpA-z7-4hy" kind="show" id="37D-ag-BD7"/>
                             </connections>
@@ -3235,32 +3242,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gmu-ji-qcd">
-                                <rect key="frame" x="62.5" y="69" width="250" height="116"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gmu-ji-qcd">
+                                <rect key="frame" x="62.5" y="69" width="250" height="138"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter New Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7D-2r-cML">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter New Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7D-2r-cML" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="Tr5-Wa-AfH"/>
-                                            <constraint firstAttribute="height" constant="40" id="thg-pI-8sc"/>
+                                            <constraint firstAttribute="height" constant="50" id="thg-pI-8sc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVb-w6-lTZ">
-                                        <rect key="frame" x="108" y="48" width="34" height="30"/>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Save">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVb-w6-lTZ">
+                                        <rect key="frame" x="90" y="70" width="70" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="5In-S4-xnx"/>
+                                            <constraint firstAttribute="height" constant="24" id="5us-3z-jtP"/>
+                                        </constraints>
+                                        <state key="normal" image="saveButton">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="Send:" destination="2Cc-GQ-LQR" eventType="touchUpInside" id="MZ3-NJ-iew"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4W-So-0EW">
-                                        <rect key="frame" x="101" y="86" width="48" height="30"/>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Cancel">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4W-So-0EW">
+                                        <rect key="frame" x="90" y="114" width="70" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="RUR-9A-CcB"/>
+                                            <constraint firstAttribute="height" constant="24" id="hLS-3d-49z"/>
+                                        </constraints>
+                                        <state key="normal" image="cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -3371,8 +3392,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FKA-9P-ecb">
-                                <rect key="frame" x="62.5" y="294.5" width="250" height="78"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="FKA-9P-ecb">
+                                <rect key="frame" x="62.5" y="281.5" width="250" height="104"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Phone number here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kv0-qt-LOe">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="40"/>
@@ -3383,10 +3404,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gW7-6v-9t3">
-                                        <rect key="frame" x="79" y="48" width="92" height="30"/>
-                                        <state key="normal" title="Invite Friends">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gW7-6v-9t3">
+                                        <rect key="frame" x="25" y="70" width="200" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="2yV-4t-gA4"/>
+                                            <constraint firstAttribute="height" constant="34" id="fZf-gX-OXg"/>
+                                        </constraints>
+                                        <state key="normal" image="InviteFriends">
+                                            <color key="titleColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -3592,14 +3617,20 @@
         <image name="2" width="192" height="192"/>
         <image name="Addiction" width="500" height="335"/>
         <image name="Anxiety" width="610" height="406"/>
-        <image name="Plus Sign" width="11" height="11"/>
+        <image name="InviteFriends" width="600" height="100"/>
+        <image name="Next" width="300" height="100"/>
+        <image name="Plus Sign" width="11.5" height="11.5"/>
         <image name="ProfilePicture" width="11.5" height="11.5"/>
         <image name="Save" width="512" height="512"/>
-        <image name="WeTSettings" width="25" height="25"/>
+        <image name="Settings" width="25" height="25"/>
+        <image name="SignUp" width="300" height="100"/>
+        <image name="Verify" width="300" height="100"/>
+        <image name="cancel" width="300" height="100"/>
         <image name="feed" width="25" height="25"/>
         <image name="melimage" width="204" height="184"/>
         <image name="picforback" width="953" height="509"/>
         <image name="plus.app" catalog="system" width="64" height="56"/>
+        <image name="saveButton" width="300" height="100"/>
         <image name="screenshotsunrise" width="443" height="619"/>
         <image name="upvoteGray" width="100" height="100"/>
         <image name="user" width="21" height="21"/>
@@ -3608,7 +3639,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9K7-Np-ZVb"/>
-        <segue reference="qki-yz-UiV"/>
+        <segue reference="IQC-qj-WI6"/>
         <segue reference="UqI-Wd-awE"/>
         <segue reference="5NQ-a2-RML"/>
     </inferredMetricsTieBreakers>
