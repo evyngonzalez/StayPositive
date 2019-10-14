@@ -89,6 +89,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - Player (0.13.1)
   - TextFieldEffects (1.6.0)
 
 DEPENDENCIES:
@@ -98,6 +99,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - JGProgressHUD
+  - Player
   - TextFieldEffects
 
 SPEC REPOS:
@@ -121,6 +123,7 @@ SPEC REPOS:
     - JGProgressHUD
     - leveldb-library
     - nanopb
+    - Player
     - TextFieldEffects
 
 SPEC CHECKSUMS:
@@ -143,8 +146,9 @@ SPEC CHECKSUMS:
   JGProgressHUD: 62658b14e72cccf179efc7a13bcb54d30b92fc22
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  Player: 29186e0d557898b0ebdab42d2e1b47e615838156
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
 
-PODFILE CHECKSUM: 9e9bf37ba1f8163e031843554e785befee3a01f5
+PODFILE CHECKSUM: c8e3614d206a17ff0ae8bdfcc1771699e58b65c8
 
 COCOAPODS: 1.7.2

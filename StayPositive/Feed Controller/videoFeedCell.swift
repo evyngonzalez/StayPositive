@@ -9,7 +9,3 @@
 import Foundation
 import UIKit
 
-class videoFeedCell: UITableViewCell {
-    
-    
-}

@@ -13,6 +13,7 @@ target 'StayPositive' do
   pod 'JGProgressHUD'
   pod 'ADCountryPicker'
   pod 'TextFieldEffects'
+  pod 'Player'
 
   target 'StayPositiveTests' do
     inherit! :search_paths

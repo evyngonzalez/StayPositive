@@ -72,6 +72,7 @@
 		D06F77642345971600BD81E0 /* StayPositive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D06F77622345971500BD81E0 /* StayPositive.xcdatamodeld */; };
 		D0A4B46C2344E73300EE9E2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0A4B46B2344E73200EE9E2A /* GoogleService-Info.plist */; };
 		D0A4B4702345269300EE9E2A /* viewChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A4B46F2345269300EE9E2A /* viewChat.swift */; };
+		D0EF3D11234F8F500085FFA4 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EF3D10234F8F500085FFA4 /* Player.swift */; };
 		D0EF6CFF233CFD4B0043A375 /* audioFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EF6CFE233CFD4B0043A375 /* audioFeedController.swift */; };
 		D0EF6D01233CFD850043A375 /* audioFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EF6D00233CFD850043A375 /* audioFeedCell.swift */; };
 		D0EF6D03233CFDD30043A375 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EF6D02233CFDD30043A375 /* Post.swift */; };
@@ -182,6 +183,7 @@
 		D06F77632345971500BD81E0 /* RSSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSSwift.xcdatamodel; sourceTree = "<group>"; };
 		D0A4B46B2344E73200EE9E2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0A4B46F2345269300EE9E2A /* viewChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewChat.swift; sourceTree = "<group>"; };
+		D0EF3D10234F8F500085FFA4 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		D0EF6CFE233CFD4B0043A375 /* audioFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioFeedController.swift; sourceTree = "<group>"; };
 		D0EF6D00233CFD850043A375 /* audioFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = audioFeedCell.swift; sourceTree = "<group>"; };
 		D0EF6D02233CFDD30043A375 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 			isa = PBXGroup;
 			children = (
 				D0EF6D05233D07FA0043A375 /* videoFeedController.swift */,
+				D0EF3D10234F8F500085FFA4 /* Player.swift */,
 				D0EF6D0A233D0AAC0043A375 /* articleFeedController.swift */,
 				D0EF6CFE233CFD4B0043A375 /* audioFeedController.swift */,
 				D0EF6D0C233D0B370043A375 /* articleFeedCell.swift */,
@@ -605,6 +608,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Player/Player.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -615,6 +619,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Player.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -735,6 +740,7 @@
 				D06EBF13231ED81B00CA4877 /* SettingsSection.swift in Sources */,
 				BB0F977F2002C49C000D25B7 /* PageVC.swift in Sources */,
 				D00E6E2522DE6C89004A8323 /* positiveFeedTableView.swift in Sources */,
+				D0EF3D11234F8F500085FFA4 /* Player.swift in Sources */,
 				9299855C1F4A0B0C00DF4167 /* PostCell.swift in Sources */,
 				D00E6E1D22DE6531004A8323 /* DataService.swift in Sources */,
 				4060F26421D0D104009C431D /* ArticleCell.swift in Sources */,
