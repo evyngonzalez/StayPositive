@@ -64,10 +64,11 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
     
     public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         guard let firstViewController = viewControllers?.first,
-            let firsViewControllerIndex = VCArr.firstIndex(of: firstViewController) else {
+            let firstViewControllerIndex = VCArr.firstIndex(of: firstViewController) else {
                 return 0
         }
-        return firsViewControllerIndex
+        return firstViewControllerIndex
+        
     }
     
     lazy var VCArr: [UIViewController] = {
@@ -76,7 +77,6 @@ class PageVC: UIPageViewController, UIPageViewControllerDataSource, UIPageViewCo
                 self.VCInstance(name: "ThirdVC"),
                 self.VCInstance(name: "FourthVC")]
     }()
-    
     
     private func VCInstance(name: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)

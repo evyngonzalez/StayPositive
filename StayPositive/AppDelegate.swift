@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import CoreData
+import AVKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.ambient,
+                                                         mode: AVAudioSession.Mode.moviePlayback,
+                                                         options: [.mixWithOthers])
+        
+        let feed = VideoFeedViewController()
+        feed.videos = Video.allVideos()
+        feed.title = "Travel Vlogs"
+//
+//        let nav = UINavigationController(rootViewController: feed)
+//        window?.rootViewController = nav
+        
+        window?.makeKeyAndVisible()
+
         return true
     }
 

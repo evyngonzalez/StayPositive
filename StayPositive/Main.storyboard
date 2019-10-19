@@ -390,7 +390,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Khu-HO-TZC" kind="show" id="FUq-eh-aps"/>
+                                                    <action selector="videoFeedButtonTapped:" destination="aFJ-L6-5eO" eventType="touchUpInside" id="dx8-re-Eug"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ai-K3-h9i">
@@ -422,6 +422,9 @@
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="Kyo-sp-xf5"/>
+                    <connections>
+                        <outlet property="videoFeed" destination="lIf-MK-27z" id="daE-I2-3n5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vop-TA-0XE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -643,24 +646,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5rK-Wz-Wnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1812" y="8335.682158920541"/>
-        </scene>
-        <!--Video Feed Controller-->
-        <scene sceneID="YPd-cs-xOs">
-            <objects>
-                <viewController id="Khu-HO-TZC" customClass="videoFeedController" customModule="StayPositive" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4PS-8p-BON"/>
-                        <viewControllerLayoutGuide type="bottom" id="mxH-Oq-aIr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qjq-e4-xQo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tsS-ky-i45" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2685.5999999999999" y="8335.682158920541"/>
         </scene>
         <!--Article Feed Controller-->
         <scene sceneID="CKa-4r-xsJ">

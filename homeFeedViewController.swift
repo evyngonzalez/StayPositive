@@ -11,6 +11,8 @@ import UIKit
 
 class homeFeedViewController: UIViewController {
     
+    @IBOutlet var videoFeed: UIButton!
+    
     override func viewDidLoad() {
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "backButton")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backButton")
@@ -21,4 +23,9 @@ class homeFeedViewController: UIViewController {
         self.navigationController!.navigationBar.isTranslucent = true
     }
     
+    let videoController = VideoFeedViewController()
+    
+    @IBAction func videoFeedButtonTapped(_ sender: Any) {
+        self.show(videoController, sender: self)
+    }
 }
