@@ -16,6 +16,29 @@ class positiveFeedTableViewController: UITableViewController {
     var chats = [Chat]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadChats()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+        navigationController?.navigationBar.isTranslucent = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.isTranslucent = true
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    @IBAction func addChatSegue(_ sender: Any) {
+        performSegue(withIdentifier: "AddChat", sender: self)
+    }
+    
+    func loadChats() {
         DataService.dataService.CHAT_REF.observe(.value, with: { snapshot in
             print(snapshot.value as Any)
             self.chats = []
@@ -33,12 +56,6 @@ class positiveFeedTableViewController: UITableViewController {
             // Be sure that the tableView updates when there is new data.
             self.tableView.reloadData()
         })
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    @IBAction func addChatSegue(_ sender: Any) {
-        performSegue(withIdentifier: "AddChat", sender: self)
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
