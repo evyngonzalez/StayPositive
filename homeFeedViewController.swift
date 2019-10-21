@@ -24,8 +24,15 @@ class homeFeedViewController: UIViewController {
     }
     
     let videoController = VideoFeedViewController()
+    let audioController = AudioFeedViewController()
+
     
     @IBAction func videoFeedButtonTapped(_ sender: Any) {
         self.show(videoController, sender: self)
     }
+    
+    @IBAction func audioFeedButtonTapped(_ sender: Any) {
+        self.show(audioController, sender: self)
+    }
+    
 }

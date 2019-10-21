@@ -1,8 +1,8 @@
 //
-//  VideoFeedViewController.swift
+//  AudioFeedViewController.swift
 //  StayPositive
 //
-//  Created by MACBOOK on 10/18/19.
+//  Created by MACBOOK on 10/21/19.
 //  Copyright © 2019 Stay+. All rights reserved.
 //
 
@@ -10,23 +10,20 @@ import Foundation
 import UIKit
 import AVKit
 
-class VideoFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var videos: [Video] = []
+class AudioFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var audios: [Audio] = []
     
-  
-    let VideoCellReuseIdentifier = "VideoCell"
+    var player: AVAudioPlayer?
+    let AudioCellReuseIdentifier = "AudioCell"
     let tableView = UITableView()
   
-//    let videoPreviewLooper = VideoLooperView(clips: VideoClip.allClips())
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
         let feed = self
-        feed.videos = Video.allVideos()
-        feed.title = "Video"
-
-//        videoPreviewLooper.play()
+        feed.audios = Audio.allAudio()
+        feed.title = "Audio"
         navigationController?.navigationBar.isTranslucent = false
     }
 
@@ -34,36 +31,36 @@ class VideoFeedViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.isHidden = false
         navigationController?.navigationBar.isTranslucent = true
-//        videoPreviewLooper.pause()
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoCellReuseIdentifier, for: indexPath) as? VideoTableViewCell else {
-            return VideoTableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AudioCellReuseIdentifier, for: indexPath) as? AudioTableViewCell else {
+            return AudioTableViewCell()
         }
-        cell.video = videos[indexPath.row]
+        cell.audio = audios[indexPath.row] 
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let video = videos[indexPath.row]
-        return VideoTableViewCell.height(for: video)
+        let audio = audios[indexPath.row]
+        return AudioTableViewCell.height(for: audio)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let video = videos[indexPath.row]
-
-        let videoURL = video.url
-        let player = AVPlayer(url: videoURL)
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-    
-        present(playerViewController, animated: true) {
-            player.play()
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+            let audio = audios[indexPath.row]
+            let audioURL = audio.url
+            player = try AVAudioPlayer(contentsOf: audioURL)
+            player?.play()
+            print("Tapped audio file")
+        }  catch {
+            print("Error trying to play")
         }
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return videos.count
+        return audios.count
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

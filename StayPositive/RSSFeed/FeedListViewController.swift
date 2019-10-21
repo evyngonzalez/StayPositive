@@ -34,7 +34,7 @@ class FeedListViewController: UITableViewController, XMLParserDelegate {
         url = URL(string: "https://ebmh.bmj.com/rss/ahead.xml")!
         loadRss(url);
     }
-    
+
     func loadRss(_ data: URL) {
 
         // XmlParserManager instance/object/variable.
